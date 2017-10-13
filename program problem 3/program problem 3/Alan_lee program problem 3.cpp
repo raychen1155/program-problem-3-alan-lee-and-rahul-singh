@@ -11,37 +11,45 @@ Using a 3 digit number to put create separate varibles
 using namespace std;
 //functions ()
 void pause() {
-	cout << "choose 3 ascending numbers . . .";
-	while (!_kbhit ());
-	_getch ();
+	cout << "Press any key to continue . . .";
+	while (!_kbhit());
+	_getch();
 	cout << '\n';
 }
+
 // main
-void main() {
-	int x; //store some 3 digit number in x
-	cout << "Enter 3-digit number";
+int main() {
+	int y = 1;
+	while (y < 31)
+	{	
+	int x;
+	cout << "Enter 3-digit number" << endl;
 	cin >> x;
-	int c= x % 10;
-	int b= (x/10) % 10;
-	int a= (x/100);
-	bool ascending  =  a != b && b != c;
+	int c = x % 10;
+	int b = (x / 10) % 10;
+	int a = (x / 100);
+	bool ascending = a != b && b != c;
 	bool descending = ascending;
 
-	if(a > b)
-	ascending = false;
-else
-	descending = false; 
+	if (a > b)
+		ascending = false;
+	else
+		descending = false;
 
 
-	if  (b > c)
-	ascending = false;
-	else 
-	descending = false;
+	if (b > c)
+		ascending = false;
+	else
+		descending = false;
 
-	if(ascending)
-	cout <<"Ascending \n";
-	else if(descending)
-	cout << "Descending \n";
-	else 
-	cout << "Neither";
+	if (ascending)
+		cout << "The number " << x << " is ascending. \n" << endl;
+	else if (descending)
+		cout << "The number " << x << " is descending. \n" << endl;
+	else
+		cout << "The number " << x << " is neither ascending or descending. \n" << endl;
+	y++;
+	_getch();
+}
+	return 0;
 }
